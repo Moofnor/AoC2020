@@ -2,6 +2,8 @@ package utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,5 +27,16 @@ public class InputLoader {
             System.out.println("Error: " + e.getMessage());
         }
         return input.toArray();
+    }
+
+    public static List<String> asList(int dayNo) {
+        try {
+            List<String> lines = Files.readAllLines(Path.of("src/day" + dayNo + "/input.txt"));
+            return lines;
+        }
+        catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return null;
     }
 }
