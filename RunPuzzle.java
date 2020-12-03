@@ -1,5 +1,5 @@
 
-import day2.*;
+import day3.*;
 
 public class RunPuzzle {
     public static void main(String[] args) {
