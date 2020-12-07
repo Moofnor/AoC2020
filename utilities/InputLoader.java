@@ -39,4 +39,15 @@ public class InputLoader {
         }
         return null;
     }
+
+    public static String asString(int dayNo) {
+        try {
+            String content = Files.readString(Path.of("src/day" + dayNo + "/input.txt"));
+            return content;
+        }
+        catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return null;
+    }
 }
